@@ -7,6 +7,8 @@ import lombok.*;
 import java.time.LocalDate;
 
 
+@Setter
+@Getter
 @Data
 @Entity
 @AllArgsConstructor
@@ -14,14 +16,27 @@ import java.time.LocalDate;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
     private Integer userId;
+
     private String full_name;
+
+    @Column(nullable = false)
     private String userName;
+
+    @Column(nullable = false)
     private String email;
+
     private String gender;
+
     private LocalDate dob;
+
     private String address;
+
+
     private String mobile_number;
+
+    private String password;
 
 
 
