@@ -12,6 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 public class PostController {
     private final PostService postService;
+
     @GetMapping("/getPost")
     public String getPost(){
         return "post";

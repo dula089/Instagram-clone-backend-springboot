@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.Set;
 
 @Data
 @Entity
@@ -22,6 +23,9 @@ public class Post {
     private LocalDate postDate;
     private LocalTime postTime;
     private String location;
+    private String Description;
 
+    @OneToMany(mappedBy = "post",cascade = CascadeType.ALL,orphanRemoval = true)
+    private Set<PostMedia>mediaFiles;
 
 }
