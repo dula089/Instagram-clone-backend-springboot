@@ -1,16 +1,21 @@
 package com.example.instagram.controller;
 
 
-import com.example.instagram.dto.LoginRequestDto;
-import com.example.instagram.dto.UserDto;
-import com.example.instagram.dto.UserGeneralDto;
-import com.example.instagram.service.UserService;
-import lombok.AllArgsConstructor;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.instagram.dto.UserGeneralDto;
+import com.example.instagram.model.User;
+import com.example.instagram.service.UserService;
+
+import lombok.AllArgsConstructor;
 
 @RestController
 @RequestMapping("/user")
@@ -25,16 +30,17 @@ public class UserController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<UserGeneralDto>>getAllUsers(){
+    public ResponseEntity<List<UserGeneralDto>> getAllUsers() {
         return userService.getAllUsers();
     }
-    @PostMapping("/signup")
-    public ResponseEntity<String>signup(@RequestBody UserDto userDto){
-        return userService.signup(userDto);
-    }
-    @PostMapping("/login")
-    public ResponseEntity<String>login(@RequestBody LoginRequestDto loginRequestDto){
-        return userService.login(loginRequestDto);
+
+    @GetMapping("/me")
+    public ResponseEntity<User> authenticatedUser() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        User currentUser = (User) authentication.getPrincipal();
+
+        return ResponseEntity.ok(currentUser);
     }
 
 }
