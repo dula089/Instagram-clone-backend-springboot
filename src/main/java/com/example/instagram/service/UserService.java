@@ -19,18 +19,18 @@ import java.util.stream.Collectors;
 public class UserService {
     private final UserRepository userRepository;
     private final BCryptPasswordEncoder passwordEncoder;
-    public ResponseEntity<UserGeneralDto> getUser(Integer userId) {
-        UserGeneralDto userGeneral=new UserGeneralDto();
-        Optional<User>optionalUser = userRepository.findById(userId);
-        if (optionalUser.isPresent()){
-            User user =optionalUser.get();
-            userGeneral.setUserId(user.getUserId());
-            userGeneral.setUserName(user.getUserName());
-            return ResponseEntity.ok(userGeneral);
-        }else{
-            return ResponseEntity.notFound().build();
-        }
-    }
+//    public ResponseEntity<UserGeneralDto> getUser(Integer userId) {
+//        UserGeneralDto userGeneral=new UserGeneralDto();
+//        Optional<User>optionalUser = userRepository.findById(userId);
+//        if (optionalUser.isPresent()){
+//            User user =optionalUser.get();
+//            userGeneral.setUserId(user.getUserId());
+//            userGeneral.setUserName(user.getUserName());
+//            return ResponseEntity.ok(userGeneral);
+//        }else{
+//            return ResponseEntity.notFound().build();
+//        }
+//    }
 
     public ResponseEntity<String> signup(UserDto userDto) {
        if(userRepository.existsByEmail(userDto.getEmail())||userRepository.existsByUserName(userDto.getUserName())){
@@ -61,10 +61,10 @@ public class UserService {
         }
     }
 
-    public ResponseEntity<List<UserGeneralDto>>getAllUsers(){
+    public ResponseEntity<List<UserDto>>getAllUsers(){
         List<User>users=userRepository.findAll();
-        List<UserGeneralDto>userDtos=users.stream().map(user -> {
-            UserGeneralDto dto=new UserGeneralDto();
+        List<UserDto>userDtos=users.stream().map(user -> {
+            UserDto dto=new UserDto();
             dto.setUserId(user.getUserId());
             dto.setUserName(user.getUserName());
             return dto;
