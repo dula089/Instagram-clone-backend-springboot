@@ -8,13 +8,17 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalTime;
+
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Follower {
+public class CommentLike {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer FollowersId;
+    private Integer CommentLikeId;
+    private Integer CommentId;
     private Integer id;
+    private LocalTime time;
 }

@@ -18,7 +18,7 @@ public class Story {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer StoryId;
-    private Integer UserId;
+    private Integer id;
     private Integer FilterId;
     private LocalTime Story_Posted_Time;
     private String Update_Story;

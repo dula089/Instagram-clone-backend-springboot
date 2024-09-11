@@ -19,11 +19,11 @@ import jakarta.persistence.Id;
 public class User implements UserDetails {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
     private Integer id;
 
-    @Column(nullable = false)
+
     private String fullName;
 
     @Column(nullable = false)

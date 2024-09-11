@@ -12,9 +12,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Follower {
+public class Share {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer FollowersId;
+    private Integer shareId;
+    private Integer postId;
     private Integer id;
 }

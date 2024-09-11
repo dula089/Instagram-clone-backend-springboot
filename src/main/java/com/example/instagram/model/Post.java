@@ -18,14 +18,14 @@ public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer postId;
-    private Integer userId;
+    private Integer id;
     private Integer filterId;
     private LocalDate postDate;
     private LocalTime postTime;
     private String location;
     private String Description;
 
-    @OneToMany(mappedBy = "post",cascade = CascadeType.ALL,orphanRemoval = true)
-    private Set<PostMedia>mediaFiles;
+//    @OneToMany(mappedBy = "post",cascade = CascadeType.ALL,orphanRemoval = true)
+//    private Set<PostMedia>mediaFiles;
 
 }

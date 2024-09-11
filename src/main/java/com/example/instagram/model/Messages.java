@@ -18,7 +18,7 @@ public class Messages {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer MessageId;
-    private Integer UserId;
+    private Integer id;
     private Integer FollowersId;
     private String Message_Content;
     private LocalTime Message_Time;

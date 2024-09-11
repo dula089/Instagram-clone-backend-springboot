@@ -2,28 +2,51 @@ package com.example.instagram.controller;
 
 import com.example.instagram.model.Post;
 import com.example.instagram.service.PostService;
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/post")
-@AllArgsConstructor
+@RequestMapping("/auth/posts")
 public class PostController {
-    private final PostService postService;
 
-    @GetMapping("/getPost")
-    public String getPost(){
-        return "post";
-    }
+    @Autowired
+    private PostService postService;
 
     @PostMapping("/create")
-    public Post createPost(@RequestBody Post post){
-        return postService.createPost(post);
+    public ResponseEntity<Post> createPost(@RequestBody Post post) {
+        Post createdPost = postService.createPost(post);
+        return ResponseEntity.ok(createdPost);
     }
-    @GetMapping("/getPosts")
-    public List<Post>getAllPosts(){
-        return postService.getAllPosts();
+
+    @GetMapping("/all")
+    public ResponseEntity<List<Post>> getAllPosts() {
+        List<Post> posts = postService.getAllPosts();
+        return ResponseEntity.ok(posts);
+    }
+
+    // Add delete post method
+    @DeleteMapping("/delete/{postId}")
+    public ResponseEntity<String> deletePost(@PathVariable Integer postId) {
+        boolean isDeleted = postService.deletePost(postId);
+        if (isDeleted) {
+            return ResponseEntity.ok("Post deleted successfully");
+        } else {
+            return ResponseEntity.status(404).body("Post not found");
+        }
+    }
+
+    // Add update/edit post method
+    @PutMapping("/edit/{postId}")
+    public ResponseEntity<Post> editPost(@PathVariable Integer postId, @RequestBody Post updatedPost) {
+        Post post = postService.updatePost(postId, updatedPost);
+        if (post != null) {
+            return ResponseEntity.ok(post);
+        } else {
+            return ResponseEntity.status(404).body(null);
+        }
     }
 }
+

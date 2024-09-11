@@ -17,5 +17,5 @@ public class PostTag {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer TagId;
     private Integer MediaId;
-    private Integer UserId;
+    private Integer id;
 }

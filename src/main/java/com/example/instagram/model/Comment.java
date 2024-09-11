@@ -18,7 +18,7 @@ public class Comment{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer CommentId;
-    private Integer UserId;
+    private Integer id;
     private Integer PostId;
     private LocalDate Comment_Date;
     private LocalTime Comment_Time;

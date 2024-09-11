@@ -13,9 +13,9 @@ public class PostMedia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer MediaId;
-    @ManyToOne
-    @JoinColumn(name ="postId" )
-    private Post post;
+//    @ManyToOne
+//    @JoinColumn(name ="postId" )
+//    private Post post;
     private String MediaURL;
     private String MediaType;
 }
