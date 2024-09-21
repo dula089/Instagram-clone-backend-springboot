@@ -13,9 +13,15 @@ public class PostMedia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer MediaId;
-//    @ManyToOne
-//    @JoinColumn(name ="postId" )
-//    private Post post;
+
+    private String name;
+    @ManyToOne
+    @JoinColumn(name ="postId" )
+    private Post post;
     private String MediaURL;
     private String MediaType;
+
+    @Lob
+    @Column(columnDefinition = "LONGBLOB")
+    private byte[] mediaData;
 }
