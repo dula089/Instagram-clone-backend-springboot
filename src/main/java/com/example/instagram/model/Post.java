@@ -25,7 +25,7 @@ public class Post {
     private String location;
     private String Description;
 
-//    @OneToMany(mappedBy = "post",cascade = CascadeType.ALL,orphanRemoval = true)
-//    private Set<PostMedia>mediaFiles;
+    @OneToMany(mappedBy = "post",cascade = CascadeType.ALL,orphanRemoval = true)
+    private Set<PostMedia>mediaFiles;
 
 }

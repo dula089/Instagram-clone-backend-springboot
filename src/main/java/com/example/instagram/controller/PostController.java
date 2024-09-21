@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/auth/posts")
+@RequestMapping("/posts")
 public class PostController {
 
     @Autowired
@@ -27,7 +27,7 @@ public class PostController {
         return ResponseEntity.ok(posts);
     }
 
-    // Add delete post method
+
     @DeleteMapping("/delete/{postId}")
     public ResponseEntity<String> deletePost(@PathVariable Integer postId) {
         boolean isDeleted = postService.deletePost(postId);
@@ -38,7 +38,7 @@ public class PostController {
         }
     }
 
-    // Add update/edit post method
+
     @PutMapping("/edit/{postId}")
     public ResponseEntity<Post> editPost(@PathVariable Integer postId, @RequestBody Post updatedPost) {
         Post post = postService.updatePost(postId, updatedPost);

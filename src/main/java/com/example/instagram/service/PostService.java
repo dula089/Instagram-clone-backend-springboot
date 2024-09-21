@@ -22,7 +22,7 @@ public class PostService {
         return postRepository.findAll();
     }
 
-    // Implement deletePost method
+
     public boolean deletePost(Integer postId) {
         Optional<Post> post = postRepository.findById(postId);
         if (post.isPresent()) {
@@ -32,7 +32,7 @@ public class PostService {
         return false;
     }
 
-    // Implement updatePost method
+
     public Post updatePost(Integer postId, Post updatedPost) {
         Optional<Post> existingPost = postRepository.findById(postId);
         if (existingPost.isPresent()) {

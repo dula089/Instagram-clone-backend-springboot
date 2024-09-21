@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/auth/post-likes")
+@RequestMapping("/post-likes")
 public class PostLikesController {
 
     @Autowired
@@ -24,8 +24,8 @@ public class PostLikesController {
 
 
     @DeleteMapping
-    public ResponseEntity<String> unlikePost(@RequestParam Integer postId, @RequestParam Integer userId) {
-        postLikesService.unlikePost(postId, userId);
+    public ResponseEntity<String> unlikePost(@RequestParam Integer postId, @RequestParam Integer id) {
+        postLikesService.unlikePost(postId, id);
         return ResponseEntity.ok("Post unliked successfully.");
     }
 
