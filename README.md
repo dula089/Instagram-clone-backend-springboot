@@ -55,62 +55,62 @@ This project is an Instagram-like backend API built using Spring Boot 3.3.3. It 
 
 ## Package Structure
 ```txt
-src
-├── main
-│   ├── java
-│   │   └── com.example.instagram
-│   │       ├── config
-│   │       │   ├──AppConfig
-│   │       │   ├──JwtAuthenticationFilter
-│   │       │   ├──SecurityConfiguration
-│   │       │   └──WebConfig
-│   │       ├── controller
-│   │       │   ├──AuthenticationController
-│   │       │   ├──PostController
-│   │       │   ├──PostLikeController
-│   │       │   ├──PostMediaController
-│   │       │   └──UserController
-│   │       ├── dto
-│   │       │   ├──LoginRequestDto
-│   │       │   ├──PostMediaRequest
-│   │       │   ├──UserDto
-│   │       │   └──UserGeneralDto
-│   │       ├── model
-│   │       │   ├──Comment
-│   │       │   ├──CommentLike
-│   │       │   ├──CommentReply
-│   │       │   ├──Follower
-│   │       │   ├──Messages
-│   │       │   ├──Post
-│   │       │   ├──PostLikes
-│   │       │   ├──PostMedia
-│   │       │   ├──PostTag
-│   │       │   ├──Share
-│   │       │   ├──Story
-│   │       │   └──User
-│   │       ├── repository
-│   │       │   ├──PostLikesRepository
-│   │       │   ├──PostMediaRepository
-│   │       │   ├──PostRepository
-│   │       │   └──UserRepository
-│   │       ├── responses
-│   │       │   └──LoginResponse
-│   │       ├── service
-│   │       │   ├──AuthenticationService
-│   │       │   ├──JwtService
-│   │       │   ├──PostLikesService
-│   │       │   ├──PostMediaService
-│   │       │   ├──PostService
-│   │       │   └──UserService
-│   │       └──Util   
-│   │           ├──ImageCompressionUtils
-│   │           └──Utilities
-│   └── resources
-│       ├── application.properties
-│       └── templates
-└── test
-    └── java
-        └── com.example.instagram
+└──src
+    ├── main
+    │   ├── java
+    │   │   └── com.example.instagram
+    │   │       ├── config
+    │   │       │   ├──AppConfig
+    │   │       │   ├──JwtAuthenticationFilter
+    │   │       │   ├──SecurityConfiguration
+    │   │       │   └──WebConfig
+    │   │       ├── controller
+    │   │       │   ├──AuthenticationController
+    │   │       │   ├──PostController
+    │   │       │   ├──PostLikeController
+    │   │       │   ├──PostMediaController
+    │   │       │   └──UserController
+    │   │       ├── dto
+    │   │       │   ├──LoginRequestDto
+    │   │       │   ├──PostMediaRequest
+    │   │       │   ├──UserDto
+    │   │       │   └──UserGeneralDto
+    │   │       ├── model
+    │   │       │   ├──Comment
+    │   │       │   ├──CommentLike
+    │   │       │   ├──CommentReply
+    │   │       │   ├──Follower
+    │   │       │   ├──Messages
+    │   │       │   ├──Post
+    │   │       │   ├──PostLikes
+    │   │       │   ├──PostMedia
+    │   │       │   ├──PostTag
+    │   │       │   ├──Share
+    │   │       │   ├──Story
+    │   │       │   └──User
+    │   │       ├── repository
+    │   │       │   ├──PostLikesRepository
+    │   │       │   ├──PostMediaRepository
+    │   │       │   ├──PostRepository
+    │   │       │   └──UserRepository
+    │   │       ├── responses
+    │   │       │   └──LoginResponse
+    │   │       ├── service
+    │   │       │   ├──AuthenticationService
+    │   │       │   ├──JwtService
+    │   │       │   ├──PostLikesService
+    │   │       │   ├──PostMediaService
+    │   │       │   ├──PostService
+    │   │       │   └──UserService
+    │   │       └──Util   
+    │   │           ├──ImageCompressionUtils
+    │   │           └──Utilities
+    │   └── resources
+    │       ├── application.properties
+    │       └── templates
+    └── test
+          └── java
+              └── com.example.instagram
 ```
 
 
