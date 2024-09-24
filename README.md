@@ -1,5 +1,16 @@
 # Instagram-clone-backend-springboot
 
+This is a simple Instagram clone backend built using Spring Boot. The project implements user authentication, authorization using JWT, user management, and RESTful APIs.
+
+## Features
+
+- User authentication and authorization with JWT (JSON Web Token)
+- User registration and login
+- JWT token generation and validation
+- CORS enabled for integration with frontend
+- Secure endpoints with Spring Security
+- CRUD operations on users
+- REST API for user data retrieval
 
 
 ## Technologies Used
