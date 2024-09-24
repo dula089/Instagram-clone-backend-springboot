@@ -116,6 +116,9 @@ This project is an Instagram-like backend API built using Spring Boot 3.3.3. It 
 
 
 ## RESTful API Endpoints
+
+### User Endpoints
+
 1. **Signup**: Register a new user.
     - **POST /auth/signup**
 2. **Login**: Authenticate a user and generate a JWT.
@@ -126,3 +129,36 @@ This project is an Instagram-like backend API built using Spring Boot 3.3.3. It 
     - **GET /user/all**
 5. **Get Authenticated User**: Get details of the currently authenticated user.
     - **GET /user/me**
+
+### Post Endpoints
+
+1. **Create Post**: Create a new post.
+    - **POST /posts/create**
+2. **Get All Posts**: Fetch all posts.
+    - **GET /posts/all**
+3. **Edit Post**: Update a post by its ID.
+    - **PUT /posts/edit/{postId}**
+4. **Delete Post**: Delete a post by its ID.
+    - **DELETE /posts/delete/{postId}**
+
+### Post Likes Endpoints
+
+1. **Like Post**: Like a post.
+    - **POST /post-likes**
+2. **Unlike Post**: Unlike a post.
+    - **DELETE /post-likes?postId={postId}&id={id}**
+3. **Get Likes by Post ID**: Retrieve all likes for a specific post.
+    - **GET /post-likes/{postId}**
+
+### Post Media Endpoints
+
+1. **Upload Image**: Upload an image associated with a post.
+    - **POST /image**
+    - **Request Parameter**: `image` (Multipart file).
+    - **Response**: Includes a message, image name, type, and access URL.
+2. **Get Image Info by Name**: Get metadata about an image.
+    - **GET /image/info/{name}**
+3. **Get Image by Name**: Retrieve and download an image by its name.
+    - **GET /image/{name}**
+    - **Response**: Returns the image as a byte array.
+
