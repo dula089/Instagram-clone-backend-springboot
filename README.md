@@ -54,4 +54,13 @@ This project is an Instagram-like backend API built using Spring Boot 3.3.3. It 
 - **Spring Security Test**: Provides support for testing Spring Security features.
 
 ## RESTful API Endpoints
-1. **User Registration**: POST /auth/signup
+1. **Signup**: Register a new user.
+    - **POST /auth/signup**
+2. **Login**: Authenticate a user and generate a JWT.
+    - **POST /auth/login**
+3. **Get User by ID**: Retrieve details of a user by user ID.
+    - **GET /user/list?userId={id}**
+4. **Get All Users**: Fetch a list of all users.
+    - **GET /user/all**
+5. **Get Authenticated User**: Get details of the currently authenticated user.
+    - **GET /user/me**
