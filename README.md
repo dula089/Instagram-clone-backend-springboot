@@ -54,7 +54,7 @@ This project is an Instagram-like backend API built using Spring Boot 3.3.3. It 
 - **Spring Security Test**: Provides support for testing Spring Security features.
 
 ## Package Structure
-
+```txt
 src
 ├── main
 │   ├── java
@@ -111,6 +111,8 @@ src
 └── test
     └── java
         └── com.example.instagram
+```
+
 
 
 ## RESTful API Endpoints
