@@ -162,3 +162,8 @@ This project is an Instagram-like backend API built using Spring Boot 3.3.3. It 
     - **GET /image/{name}**
     - **Response**: Returns the image as a byte array.
 
+## Entity Relationship Diagram
+
+
+![ER drawio (1)](https://github.com/user-attachments/assets/3039d3b2-f397-4c3d-aba7-07e834b0c2e3)
+
